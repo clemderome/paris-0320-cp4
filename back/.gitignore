@@ -31,3 +31,6 @@ npm-debug.log
 
 # Dotenv file
 .env
+
+# Other
+.DS_Store
