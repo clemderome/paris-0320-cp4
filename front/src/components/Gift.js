@@ -1,10 +1,11 @@
 import React from 'react'
 import './Gift.css'
 
-function Gift (props) {
+function Gift ({data}) {
   return (
     <div className='Gift'>
-      UN SUPER CADEAU
+      <p>{data.name}</p>
+      <p>{data.details}</p>
       <button className='remove'>X</button>
     </div>
   )
