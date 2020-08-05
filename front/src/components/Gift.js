@@ -1,12 +1,12 @@
 import React from 'react'
 import './Gift.css'
 
-function Gift ({data}) {
+function Gift({ data }) {
   return (
     <div className='Gift'>
-      <p>{data.name}</p>
-      <p>{data.details}</p>
-      <button className='remove'>X</button>
+      <p>{data.name} </p>
+      <p>{data.details} </p>
+      <button className='remove'>Supprimer</button>
     </div>
   )
 }
