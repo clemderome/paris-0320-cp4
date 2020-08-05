@@ -10,9 +10,8 @@ router.get('/gifts', (req, res) => {
     if (err) throw err
     return res.status(200).send(result)
   })
-  res.json([])
 })
-
+// Ajouter la route POST avec le chemin /gifts
 router.post('/gifts', (req, res) => {
   const formData = req.body
   connection.query('INSERT INTO gift SET ?', formData, (err, result) => {
@@ -23,12 +22,6 @@ router.post('/gifts', (req, res) => {
     }
   })
 })
-// Ajouter la route POST avec le chemin /gifts
-
-
-// Router.delete('/:gift/:id', (req, res) => {
-//   res.send
-// })
 // Ajouter la route DELETE avec le chemin /gifts/:giftId
 // (giftId = l'id du cadeau à supprimer)
 
