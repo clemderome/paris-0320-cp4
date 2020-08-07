@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import Gift from './components/Gift'
-import Form from './components/Form'
 import axios from 'axios'
+import Form from './components/Form'
+import Gift from './components/Gift'
 import logo from './logo.png'
+
 import './App.css'
 
 const App = () => {
@@ -26,19 +27,19 @@ const App = () => {
     fetchGifts()
   }, [])
 
-  // removeGift () {
-  // }
   return (
     <div className='App'>
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='Old Wild logo' />
         <h1 className='App-title'>It's Christmas !</h1>
       </header>
-      <div>
+      <div className='listForm'>
         <div className='GiftWrapper'>
           <h2 onClick={fetchGifts}>Ma liste de cadeaux :</h2>
-          {gifts.map(data =>
-            <Gift key={data.id} data={data} deleteGift={deleteGift} />)}
+          <div className='GiftList' >
+            {gifts.map(data =>
+              <Gift key={data.id} data={data} deleteGift={deleteGift} />)}
+          </div>
         </div>
         <Form />
       </div>

@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h3, p {
+  margin: 2px;
+  font-weight: 900;
 }
 
 .App form {
@@ -25,7 +31,7 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
 }
 
 .App-intro {
@@ -37,6 +43,13 @@
   to { transform: rotate(360deg); }
 }
 
+.GiftList {
+  border-radius: 10px;
+  background-image: url('https://images.freeimages.com/images/large-previews/6c4/parchment-1148173.jpg') ;
+  box-shadow: 2px 4px 4px 0px rgba(40, 40, 40, 0.708);
+
+}
+
 .GiftWrapper {
   display: flex;
   flex-direction: column;
@@ -45,10 +58,28 @@
   padding: 10px;
 }
 
+.GiftWrapper h2 {
+  font-size: 30px;
+  text-shadow: 2px 2px 1px aliceblue;
+}
+
 .mail {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid red;
   outline: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+  .GiftList {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .listForm {
+    display: flex;
+    justify-content: center;
+  }
 }

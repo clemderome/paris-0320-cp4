@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 
+import './Form.css'
+
 const Form = () => {
 
     const [gifts, setGifts] = useState([])
@@ -16,13 +18,13 @@ const Form = () => {
         .catch(err => console.log('erreur:', err))
     }
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className='formular'>
+            <form className='formBloc' onSubmit={handleSubmit} >
                 <label>Cadeau : </label>
                 <input type='text' name='name' onChange={handleChange} />
                 <label>Détails du cadeau : </label>
-                <input type='text' name='details' onChange={handleChange} />
-                <button type='submit'> Ajouter </button>
+                <textarea name='details' onChange={handleChange} />
+                <button className='add-button' type='submit'> Ajouter </button>
             </form>
         </div>
     )

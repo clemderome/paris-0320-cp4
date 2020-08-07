@@ -1,14 +1,30 @@
 .Gift {
-    min-height: 50px;
-    box-shadow: 5px 4px 12px 0px rgba(40, 40, 40, 0.708);
-    margin-bottom: 20px;
-    min-width: 400px;
     display: flex;
+    font-family: cursive;
+    font-size: large;
+    min-height: 50px;
+    margin: 0;
+    /* min-width: 400px; */
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.gifts {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    align-items: flex-end;
 }
 
 .Gift .remove {
     margin-left: 10px; 
     outline: none;
+    width: 30px;
+}
+
+@media screen and (min-width: 640px) {
+    .Gift {
+        width: 500px;
+    }
 }
