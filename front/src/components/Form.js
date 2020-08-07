@@ -11,10 +11,9 @@ const Form = () => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
         axios.post('http://localhost:5000/gifts', gifts)
-            .then(setGifts(e.target.value))
-            .catch(err => console.log('erreur:', err))
+        .then(setGifts(e.target.value))
+        .catch(err => console.log('erreur:', err))
     }
     return (
         <div>

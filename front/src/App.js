@@ -9,6 +9,14 @@ const App = () => {
 
   const [gifts, setGifts] = useState([])
 
+  const deleteGift = (e) => {
+    const tmp = [...gifts]
+    const index = tmp.findIndex((item) => item.id === parseInt(e))
+    tmp.splice(index, 1)
+    setGifts(tmp)
+    axios.delete(`http://localhost:5000/gifts/${e}`)
+  }
+
   const fetchGifts = async () => {
     const result = await axios.get('http://localhost:5000/gifts')
     setGifts(result.data)
@@ -30,7 +38,7 @@ const App = () => {
         <div className='GiftWrapper'>
           <h2 onClick={fetchGifts}>Ma liste de cadeaux :</h2>
           {gifts.map(data =>
-            <Gift key={data.id} data={data} />)}
+            <Gift key={data.id} data={data} deleteGift={deleteGift} />)}
         </div>
         <Form />
       </div>

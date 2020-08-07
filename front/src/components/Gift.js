@@ -1,12 +1,13 @@
 import React from 'react'
 import './Gift.css'
 
-function Gift({ data }) {
+const Gift = ({ data: { id, name, details }, deleteGift }) => {
+
   return (
     <div className='Gift'>
-      <p>{data.name} </p>
-      <p>{data.details} </p>
-      <button className='remove'>Supprimer</button>
+      <p>{name} </p>
+      <p>{details} </p>
+      <button className='remove' onClick={() => deleteGift(id)}>Supprimer</button>
     </div>
   )
 }
